@@ -1,0 +1,38 @@
+---
+category: Responses
+type: 0x8000
+name: Status
+parameters:
+    - type: uint8_t
+      name: Status
+      enum:
+        - name: Success
+          value: 0
+
+        - name: Incorrect parameters
+          value: 1
+
+        - name: Unhandled command
+          value: 2
+
+        - name: Command failed
+          value: 3
+
+        - name: Busy (node is carying out lenghty operation)
+          value: 4
+
+        - name: Stack already starteed (no new configuration accepted)
+          value: 5
+
+        - name: Zigbee error
+          value: 127 - 244
+
+    - type: uint8_t
+      name: Sequence number
+
+    - type: uint16_t
+      name: Packet type
+
+    - type: string
+      name: Additional info
+

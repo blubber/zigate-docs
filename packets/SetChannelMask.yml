@@ -1,0 +1,11 @@
+---
+category: Basic
+type: 0x21
+name: Set Channel Mask
+responses:
+    - Status
+
+parameters:
+    - type: uint32_t
+      name: Channel mask
+

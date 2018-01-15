@@ -1,0 +1,40 @@
+{%- macro t(columns, items, group=None, title='') -%}
+<thead>
+  {% if group %}
+    <tr class="bg-dark text-light">
+      <th colspan="{{ columns | length }}">
+        <a href="{{ title | href }}-{{ group | href }}"></a>
+        <h3 id="{{ title | href }}-{{ group | href }}">{{ group }}</h3>
+      </th>
+    </tr>
+  {% endif %}
+  <tr class="text-light bg-primary">
+    {% for c in columns %}
+      <th
+            {%- if c.width %} width="{{ c.width }}%"{%- endif -%}
+            {%- if c.nowrap %} class="text-nowrap"{%- endif -%}>
+        {{ c.title }}
+      </th>
+    {% endfor %}
+  </tr>
+</thead>
+<tbody>
+  {% for i in items %}
+    <tr>
+      {% for c in columns %}
+        <td{% if c.nowrap %} class="text-nowrap"{% endif %}>{{ i | column(c) }}</td>
+      {% endfor %}
+    </tr>
+  {% endfor %}
+</tbody>
+{%- endmacro -%}
+
+{% with columns=table.columns, items=table['items'], groups=table.groups %}
+  <table class="table">
+    {% if groups %}
+      {% for g in groups %}{{ t(columns, g['items'], g.title, table.title) }}{% endfor %}
+    {% else %}
+      {{ t(columns, items) }}
+    {% endif %}
+  </table>
+{% endwith %}

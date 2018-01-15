@@ -1,0 +1,203 @@
+---
+title: Clusters
+description: >
+    This table lists all Zigbee clusters that are supported by Zigate. Refer to the
+    {{ None | spec('zcl', 'Zigbee Cluser Library', '') }} specification for details.
+columns:
+    - column: id
+      title: Cluster ID
+      nowrap: true
+      template: "<code>{{ '0x%04x' | format(id) }}</code>"
+    - column: name
+      nowrap: true
+      title: Name
+      template: >
+          {{ name }}
+          {% if page %}
+            <div class="small">
+                ({{ page | spec('zcl', page_name) }})
+            </div>
+          {% endif %}
+    - column: desc
+      title: Description
+
+items:
+    - id: 0x0
+      name: Basic
+      page: 97
+      page_name: "3-1"
+      desc: >
+          Attributes for determining basic information about a device, setting
+          user device information such as desc of location, and enabling
+          a device.
+
+    - id: 0x1
+      name: Power configuration
+      page: 97
+      page_name: "3-1"
+      desc: >
+          Attributes for determining more detailed information about a device’s
+          power source(s), and for configuring under/over voltage alarms.
+
+    - id: 0x2
+      name: Device temperature configuration
+      page: 97
+      page_name: "3-1"
+      desc: >
+          Attributes for determining information about a device’s internal temperature,
+          and for configuring under/over temperature alarms.
+
+    - id: 0x3
+      name: Identify
+      page: 97
+      page_name: "3-1"
+      desc: >
+          Attributes and commands for putting a device into Identification mode
+          (e.g., flashing a light)
+
+    - id: 0x4
+      name: Groups
+      page: 98
+      page_name: "3-2"
+      desc: >
+          Attributes and commands for allocating a device to one or more of a number of
+          groups of devices, where each group is addressable by a group address.
+
+    - id: 0x5
+      name: Scenes
+      page: 98
+      page_name: "3-2"
+      desc: >
+          Attributes and commands for setting up and recalling a number of scenes for
+          a device. Each scene corresponds to a set of stored values of specified device
+          attributes.
+
+    - id: 0x6
+      name: On/Off
+      page: 98
+      page_name: "3-2"
+      desc: Attributes and commands for switching devices between ‘On’ and ‘Off’ states.
+
+    - id: 0x7
+      name: On/Off switch configuration
+      page: 98
+      page_name: "3-2"
+      desc: Attributes and commands for configuring on/off switching devices.
+
+    - id: 0x8
+      name: Level Control
+      page: 98
+      page_name: "3-2"
+      desc: >
+          Attributes and commands for controlling a characteristic of devices that can be
+          set to a level between fully ‘On’ and fully ‘Off’.
+
+    - id: 0x9
+      name: Alarms
+      page: 99
+      page_name: "3-3"
+      desc: >
+          Attributes and commands for sending alarm notifications and configuring
+          alarm functionality.
+
+    - id: 0xa
+      name: Time
+      page: 99
+      page_name: "3-3"
+      desc: Attributes and commands that provide an interface to a real-time clock.
+
+    - id: 0xf
+      name: Binary Input (basic)
+      page: 100
+      page_name: "3-4"
+      desc: >
+          An interface for reading the value of a binary measurement and accessing
+          various characteristics of that measurement.
+
+    - id: 0x19
+      name: OTA
+      oage: 100
+      page_name: "3-5"
+      desc: >
+          An interface for setting the value of a binary output (typically to the
+          environment) and accessing various characteristics of that value.
+
+    - id: 0x20
+      name: Poll Control
+      page: 239
+      page_name: "3-143"
+
+    - id: 0x101
+      name: Door Lock
+      page: 399
+      page_name: "7-1"
+      desc: An interface to a generic way to secure a door.
+
+    - id: 0x201
+      page: 359
+      page_name: "6-1"
+      name: Thermostat
+      desc: An interface for configuring and controlling the functionality of a thermostat.
+
+    - id: 0x202
+      page: 359
+      page_name: "6-1"
+      name: Fan control
+      desc: An interface for controlling a fan in a heating / cooling system.
+
+    - id: 0x300
+      name: Color control
+      page: 323
+      page_name: "5-1"
+      desc: Attributes and commands for controlling the color of a color-capable light.
+
+    - id: 0x400
+      name: Illuminance measurement
+      page: 277
+      page_name: "4-1"
+      desc: >
+          Attributes and commands for configuring the measurement of illuminance,
+          and reporting illuminance measurements
+
+    - id: 0x402
+      name: Temperature measurement
+      page: 278
+      page_name: "4-2"
+      desc: >
+          Attributes and commands for configuring the meas- urement of
+          temperature, and reporting temPressure Measurement
+
+    - id: 0x405
+      name: "Measurement: Humidity"
+      page: 278
+      page_name: "4-2"
+      desc: >
+          Attributes and commands for configuring the meas- urement of
+          pressure, and reporting pressure measurements.
+
+    - id: 0x500
+      name: IAS Zone
+      page: 457
+      page_nane: 8-3
+
+    - id: 0x702
+      name: Metering
+      page: 543
+      page_name: "10-1"
+      desc: Commands and attributes for reporting metering data.
+
+    - id: 0xb05
+      name: Diagnostics
+      page: 100
+      page_name: "3-4"
+      desc: >
+          Attributes and commands that provide an interface to diagnostics of the ZigBee stack.
+
+    - id: 0x1000
+      name: Touchlink commissioning
+
+    - id: 0xff01
+      name: Xiaomi proprietary
+
+    - id: 0xff02
+      name: Xiaomi proprietary

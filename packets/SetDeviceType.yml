@@ -1,0 +1,20 @@
+---
+category: Basic
+type: 0x22
+name: Set Device Type
+responses:
+    - Status
+
+parameters:
+    - type: uint8_t
+      name: Device type
+      enum:
+        - name: Coordinator
+          value: "0"
+
+        - name: Router
+          value: "1"
+
+        - name: Legacy router
+          value: "2"
+

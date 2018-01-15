@@ -1,0 +1,1643 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <div class="sticky-top" id="nav" style="height: calc(100vh - 3rem); overflow-y: auto">
+          <h5 style="height: 2rem;" clas="mb-0">Contents</h5>
+          <nav class="nav navbar-light navbar-light bg-light">
+            <nav class="nav flex-column">
+              <a href="#tables" class="nav-link">Tables</a>
+              <nav class="nav flex-column">
+                
+                  <a href="#tables-Clusters" class="ml-4 nav-link">Clusters</a>
+                
+                  <a href="#tables-Enumerations" class="ml-4 nav-link">Enumerations</a>
+                
+
+              
+                <a href="#Basic" class="nav-link">Basic<a/>
+                <nav class="nav flex-column">
+                  
+                    <a
+                        class="nav-link ml-4"
+                        href="#Basic-Request_Version"
+                      >Request Version</a>
+                  
+                    <a
+                        class="nav-link ml-4"
+                        href="#Basic-Set_Channel_Mask"
+                      >Set Channel Mask</a>
+                  
+                    <a
+                        class="nav-link ml-4"
+                        href="#Basic-Set_Device_Type"
+                      >Set Device Type</a>
+                  
+                    <a
+                        class="nav-link ml-4"
+                        href="#Basic-Start_Network"
+                      >Start Network</a>
+                  
+                    <a
+                        class="nav-link ml-4"
+                        href="#Basic-Network_Address_Request"
+                      >Network Address Request</a>
+                  
+                    <a
+                        class="nav-link ml-4"
+                        href="#Basic-IEEE_Address_Request"
+                      >IEEE Address Request</a>
+                  
+                    <a
+                        class="nav-link ml-4"
+                        href="#Basic-Node_Descriptor_request"
+                      >Node Descriptor request</a>
+                  
+                    <a
+                        class="nav-link ml-4"
+                        href="#Basic-Node_Descriptor_request"
+                      >Node Descriptor request</a>
+                  
+                </nav>
+              
+                <a href="#Responses" class="nav-link">Responses<a/>
+                <nav class="nav flex-column">
+                  
+                    <a
+                        class="nav-link ml-4"
+                        href="#Responses-Status"
+                      >Status</a>
+                  
+                    <a
+                        class="nav-link ml-4"
+                        href="#Responses-Node_Descriptor_response"
+                      >Node Descriptor response</a>
+                  
+                </nav>
+              
+            </nav>
+          </nav>
+        </div>
+      </div>
+      <div class="col-9">
+        <div>
+          <a name="tables"></a>
+          <h2 id="tables">Tables</h2>
+
+          
+            <a name="tables-Clusters"></a>
+            <h3 id="tables-Clusters">Clusters</h3>
+            
+              <p>This table lists all Zigbee clusters that are supported by Zigate. Refer to the <span class="text-nowrap">
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf" target="_blank">Zigbee Cluser Library</a></span> specification for details.</p>
+            
+            
+  <table class="table">
+    
+      <thead>
+  
+  <tr class="text-light bg-primary">
+    
+      <th class="text-nowrap">
+        Cluster ID
+      </th>
+    
+      <th class="text-nowrap">
+        Name
+      </th>
+    
+      <th>
+        Description
+      </th>
+    
+  </tr>
+</thead>
+<tbody>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0000</code></td>
+      
+        <td class="text-nowrap">Basic 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=97" target="_blank">3-1</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes for determining basic information about a device, setting user device information such as desc of location, and enabling a device.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0001</code></td>
+      
+        <td class="text-nowrap">Power configuration 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=97" target="_blank">3-1</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes for determining more detailed information about a device’s power source(s), and for configuring under/over voltage alarms.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0002</code></td>
+      
+        <td class="text-nowrap">Device temperature configuration 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=97" target="_blank">3-1</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes for determining information about a device’s internal temperature, and for configuring under/over temperature alarms.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0003</code></td>
+      
+        <td class="text-nowrap">Identify 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=97" target="_blank">3-1</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands for putting a device into Identification mode (e.g., flashing a light)
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0004</code></td>
+      
+        <td class="text-nowrap">Groups 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=98" target="_blank">3-2</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands for allocating a device to one or more of a number of groups of devices, where each group is addressable by a group address.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0005</code></td>
+      
+        <td class="text-nowrap">Scenes 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=98" target="_blank">3-2</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands for setting up and recalling a number of scenes for a device. Each scene corresponds to a set of stored values of specified device attributes.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0006</code></td>
+      
+        <td class="text-nowrap">On/Off 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=98" target="_blank">3-2</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands for switching devices between ‘On’ and ‘Off’ states.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0007</code></td>
+      
+        <td class="text-nowrap">On/Off switch configuration 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=98" target="_blank">3-2</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands for configuring on/off switching devices.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0008</code></td>
+      
+        <td class="text-nowrap">Level Control 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=98" target="_blank">3-2</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands for controlling a characteristic of devices that can be set to a level between fully ‘On’ and fully ‘Off’.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0009</code></td>
+      
+        <td class="text-nowrap">Alarms 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=99" target="_blank">3-3</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands for sending alarm notifications and configuring alarm functionality.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x000a</code></td>
+      
+        <td class="text-nowrap">Time 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=99" target="_blank">3-3</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands that provide an interface to a real-time clock.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x000f</code></td>
+      
+        <td class="text-nowrap">Binary Input (basic) 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=100" target="_blank">3-4</a></span>)
+  </div>
+</td>
+      
+        <td>An interface for reading the value of a binary measurement and accessing various characteristics of that measurement.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0019</code></td>
+      
+        <td class="text-nowrap">OTA </td>
+      
+        <td>An interface for setting the value of a binary output (typically to the environment) and accessing various characteristics of that value.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0020</code></td>
+      
+        <td class="text-nowrap">Poll Control 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=239" target="_blank">3-143</a></span>)
+  </div>
+</td>
+      
+        <td></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0101</code></td>
+      
+        <td class="text-nowrap">Door Lock 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=399" target="_blank">7-1</a></span>)
+  </div>
+</td>
+      
+        <td>An interface to a generic way to secure a door.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0201</code></td>
+      
+        <td class="text-nowrap">Thermostat 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=359" target="_blank">6-1</a></span>)
+  </div>
+</td>
+      
+        <td>An interface for configuring and controlling the functionality of a thermostat.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0202</code></td>
+      
+        <td class="text-nowrap">Fan control 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=359" target="_blank">6-1</a></span>)
+  </div>
+</td>
+      
+        <td>An interface for controlling a fan in a heating / cooling system.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0300</code></td>
+      
+        <td class="text-nowrap">Color control 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=323" target="_blank">5-1</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands for controlling the color of a color-capable light.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0400</code></td>
+      
+        <td class="text-nowrap">Illuminance measurement 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=277" target="_blank">4-1</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands for configuring the measurement of illuminance, and reporting illuminance measurements
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0402</code></td>
+      
+        <td class="text-nowrap">Temperature measurement 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=278" target="_blank">4-2</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands for configuring the meas- urement of temperature, and reporting temPressure Measurement
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0405</code></td>
+      
+        <td class="text-nowrap">Measurement: Humidity 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=278" target="_blank">4-2</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands for configuring the meas- urement of pressure, and reporting pressure measurements.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0500</code></td>
+      
+        <td class="text-nowrap">IAS Zone 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=457" target="_blank">457</a></span>)
+  </div>
+</td>
+      
+        <td></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0702</code></td>
+      
+        <td class="text-nowrap">Metering 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=543" target="_blank">10-1</a></span>)
+  </div>
+</td>
+      
+        <td>Commands and attributes for reporting metering data.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x0b05</code></td>
+      
+        <td class="text-nowrap">Diagnostics 
+  <div class="small">
+      (<span class="text-nowrap">ZCL, p.
+               <a href="http://www.zigbee.org/~zigbeeor/wp-content/uploads/2014/10/07-5123-06-zigbee-cluster-library-specification.pdf#page=100" target="_blank">3-4</a></span>)
+  </div>
+</td>
+      
+        <td>Attributes and commands that provide an interface to diagnostics of the ZigBee stack.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0x1000</code></td>
+      
+        <td class="text-nowrap">Touchlink commissioning </td>
+      
+        <td></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0xff01</code></td>
+      
+        <td class="text-nowrap">Xiaomi proprietary </td>
+      
+        <td></td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>0xff02</code></td>
+      
+        <td class="text-nowrap">Xiaomi proprietary </td>
+      
+        <td></td>
+      
+    </tr>
+  
+</tbody>
+    
+  </table>
+
+          
+            <a name="tables-Enumerations"></a>
+            <h3 id="tables-Enumerations">Enumerations</h3>
+            
+              <p>This table explains the meaning of the enumerations used in the ZDP. For more information refer to <span class="text-nowrap">Spec., p.
+               <a href="http://www.zigbee.org/wp-content/uploads/2014/11/docs-05-3474-20-0csg-zigbee-specification.pdf#page=242" target="_blank">214</a></span>.</p>
+            
+            
+  <table class="table">
+    
+      <thead>
+  
+  <tr class="text-light bg-primary">
+    
+      <th class="text-nowrap">
+        Enumeration
+      </th>
+    
+      <th class="text-nowrap">
+        Value
+      </th>
+    
+      <th>
+        Description
+      </th>
+    
+  </tr>
+</thead>
+<tbody>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>SUCCESS</code></td>
+      
+        <td class="text-nowrap"><code>0x0000</code></td>
+      
+        <td>The requested operation or transmission was completed successfully.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>INV_REQUESTTYPE</code></td>
+      
+        <td class="text-nowrap"><code>0x0080</code></td>
+      
+        <td>The supplied request type was invalid.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>DEVICE_NOT_FOUND</code></td>
+      
+        <td class="text-nowrap"><code>0x0081</code></td>
+      
+        <td>The requested device did not exist on a device following a child descriptor request to a parent.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>INVALID_EP</code></td>
+      
+        <td class="text-nowrap"><code>0x0082</code></td>
+      
+        <td>The supplied endpoint was equal to 0x00 or 0xff.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>NOT_ACTIVE</code></td>
+      
+        <td class="text-nowrap"><code>0x0083</code></td>
+      
+        <td>The requested endpoint is not described by a simple descriptor.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>NOT_SUPPORTED</code></td>
+      
+        <td class="text-nowrap"><code>0x0084</code></td>
+      
+        <td>The requested optional feature is not supported on the target device.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>TIMEOUT</code></td>
+      
+        <td class="text-nowrap"><code>0x0085</code></td>
+      
+        <td>A timeout has occurred with the requested operation.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>NO_MATCH</code></td>
+      
+        <td class="text-nowrap"><code>0x0086</code></td>
+      
+        <td>The end device bind request was unsuccessful due to a failure to match any suitable clusters.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>NO_ENTRY</code></td>
+      
+        <td class="text-nowrap"><code>0x0088</code></td>
+      
+        <td>The unbind request was unsuccessful due to the coordinator or source device not having an entry in its binding table to unbind.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>NO_DESCRIPTOR</code></td>
+      
+        <td class="text-nowrap"><code>0x0089</code></td>
+      
+        <td>A child descriptor was not available following a discovery request to a parent.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>INSUFFICIENT_SPACE</code></td>
+      
+        <td class="text-nowrap"><code>0x008a</code></td>
+      
+        <td>The device does not have storage space to support the requested operation.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>NOT_PERMITTED</code></td>
+      
+        <td class="text-nowrap"><code>0x008b</code></td>
+      
+        <td>The device is not in the proper state to support the requested operation.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>TABLE_FULL</code></td>
+      
+        <td class="text-nowrap"><code>0x008e</code></td>
+      
+        <td>The device does not have table space to support the operation.</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>NOT_AUTHORIZED</code></td>
+      
+        <td class="text-nowrap"><code>0x008d</code></td>
+      
+        <td>The permissions configuration table on the target indicates that the request is not authorized from this device.
+</td>
+      
+    </tr>
+  
+    <tr>
+      
+        <td class="text-nowrap"><code>DEVICE_BINDING_TABLE_FULL</code></td>
+      
+        <td class="text-nowrap"><code>0x008e</code></td>
+      
+        <td>The device does not have binding table space to support the operation.</td>
+      
+    </tr>
+  
+</tbody>
+    
+  </table>
+
+          
+
+          <h2>Commands</h2>
+          <table class="table my-5">
+            
+            <thead>
+                <tr class="bg-dark text-light">
+                  <th colspan="5">
+                    <a name="Basic"></a>
+                    <h3 id="Basic">Basic</h3>
+                  </th>
+                </tr>
+                <tr class="text-light bg-primary">
+                  <th style="width: 350px">Request</th>
+                  
+                    <th>Parameters</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>
+                      <a name="Basic-Request_Version"></a>
+                      <h5 class="text-nowrap">Request Version</h5>
+                      <p class="texxt-nowrap">
+                        
+                        <code class="text-nowrap"><strong>0x0010</strong></code>
+                      </p>
+
+                      
+                        <p class="small">
+                          <strong>Response:</strong>
+                          
+                            <a href="#Responses-Status">Status</a>,
+                          
+                            <a href="#Responses-Version">Version</a>
+                          
+                        </p>
+
+                        
+                      
+                    </td>
+
+                    <td>
+                      
+                    </td>
+                  </tr>
+                
+                  <tr>
+                    <td>
+                      <a name="Basic-Set_Channel_Mask"></a>
+                      <h5 class="text-nowrap">Set Channel Mask</h5>
+                      <p class="texxt-nowrap">
+                        
+                        <code class="text-nowrap"><strong>0x0021</strong></code>
+                      </p>
+
+                      
+                        <p class="small">
+                          <strong>Response:</strong>
+                          
+                            <a href="#Responses-Status">Status</a>
+                          
+                        </p>
+
+                        
+                      
+                    </td>
+
+                    <td>
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Channel mask</code></div>
+                          <div class="col-4"><code>uint32_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                    </td>
+                  </tr>
+                
+                  <tr>
+                    <td>
+                      <a name="Basic-Set_Device_Type"></a>
+                      <h5 class="text-nowrap">Set Device Type</h5>
+                      <p class="texxt-nowrap">
+                        
+                        <code class="text-nowrap"><strong>0x0022</strong></code>
+                      </p>
+
+                      
+                        <p class="small">
+                          <strong>Response:</strong>
+                          
+                            <a href="#Responses-Status">Status</a>
+                          
+                        </p>
+
+                        
+                      
+                    </td>
+
+                    <td>
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Device type</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                          <div class="row mt-1">
+                            <div class="col ml-4">
+                              <strong>Enumerations</strong>
+                            </div>
+                          </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>0</code>
+                              </div>
+                              <div class="col-8 small">Coordinator</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>1</code>
+                              </div>
+                              <div class="col-8 small">Router</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>2</code>
+                              </div>
+                              <div class="col-8 small">Legacy router</div>
+                            </div>
+                          
+                        
+                      
+                    </td>
+                  </tr>
+                
+                  <tr>
+                    <td>
+                      <a name="Basic-Start_Network"></a>
+                      <h5 class="text-nowrap">Start Network</h5>
+                      <p class="texxt-nowrap">
+                        
+                        <code class="text-nowrap"><strong>0x0024</strong></code>
+                      </p>
+
+                      
+                        <p class="small">
+                          <strong>Response:</strong>
+                          
+                            <a href="#Responses-Status">Status</a>,
+                          
+                            <a href="#Responses-Network_Joined">Network Joined</a>
+                          
+                        </p>
+
+                        
+                      
+                    </td>
+
+                    <td>
+                      
+                    </td>
+                  </tr>
+                
+                  <tr>
+                    <td>
+                      <a name="Basic-Network_Address_Request"></a>
+                      <h5 class="text-nowrap">Network Address Request</h5>
+                      <p class="texxt-nowrap">
+                        
+                          <div class="small">
+                            Zigbee: <code class="text-dark">NWK_addr_req</code>,
+                            <span class="text-nowrap">Spec., p.
+               <a href="http://www.zigbee.org/wp-content/uploads/2014/11/docs-05-3474-20-0csg-zigbee-specification.pdf#page=129" target="_blank">101</a></span>.
+                          </div>
+                        
+                        <code class="text-nowrap"><strong>0x0040</strong></code>
+                      </p>
+
+                      
+                        <p class="small">
+                          <strong>Response:</strong>
+                          
+                            <a href="#Responses-Status">Status</a>,
+                          
+                            <a href="#Responses-Network_Address_Response">Network Address Response</a>
+                          
+                        </p>
+
+                        
+                          <p class="small">The NWK_addr_req is generated from a Local Device wishing to inquire as to the 16-bit address of the Remote Device based on its known IEEE address. The destination addressing on this command shall be unicast or broadcast to all devices for which macRxOnWhenIdle = TRUE.
+</p>
+                        
+                      
+                    </td>
+
+                    <td>
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">IEEE Address</code></div>
+                          <div class="col-4"><code>uint64_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Request Type</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                          <div class="row mt-1">
+                            <div class="col ml-4">
+                              <strong>Enumerations</strong>
+                            </div>
+                          </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>0</code>
+                              </div>
+                              <div class="col-8 small">Simple Device Response</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>1</code>
+                              </div>
+                              <div class="col-8 small">Extended Device Response</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>0x02 - 0xff</code>
+                              </div>
+                              <div class="col-8 small">Reserved</div>
+                            </div>
+                          
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Request Type</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                    </td>
+                  </tr>
+                
+                  <tr>
+                    <td>
+                      <a name="Basic-IEEE_Address_Request"></a>
+                      <h5 class="text-nowrap">IEEE Address Request</h5>
+                      <p class="texxt-nowrap">
+                        
+                          <div class="small">
+                            Zigbee: <code class="text-dark">IEEE_addr_req</code>,
+                            <span class="text-nowrap">Spec., p.
+               <a href="http://www.zigbee.org/wp-content/uploads/2014/11/docs-05-3474-20-0csg-zigbee-specification.pdf#page=131" target="_blank">103</a></span>.
+                          </div>
+                        
+                        <code class="text-nowrap"><strong>0x0041</strong></code>
+                      </p>
+
+                      
+                        <p class="small">
+                          <strong>Response:</strong>
+                          
+                            <a href="#Responses-Status">Status</a>,
+                          
+                            <a href="#Responses-IEEE_Address_Response">IEEE Address Response</a>
+                          
+                        </p>
+
+                        
+                          <p class="small">The IEEE_addr_req is generated from a Local Device wishing to inquire as to the 64-bit IEEE address of the Remote Device based on their known 16-bit address. The destination addressing on this command shall be unicast.
+</p>
+                        
+                      
+                    </td>
+
+                    <td>
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Short address</code></div>
+                          <div class="col-4"><code>uint16_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Request type</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                          <div class="row mt-1">
+                            <div class="col ml-4">
+                              <strong>Enumerations</strong>
+                            </div>
+                          </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>0</code>
+                              </div>
+                              <div class="col-8 small">Single device response</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>1</code>
+                              </div>
+                              <div class="col-8 small">Extended response</div>
+                            </div>
+                          
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Start index</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                    </td>
+                  </tr>
+                
+                  <tr>
+                    <td>
+                      <a name="Basic-Node_Descriptor_request"></a>
+                      <h5 class="text-nowrap">Node Descriptor request</h5>
+                      <p class="texxt-nowrap">
+                        
+                          <div class="small">
+                            Zigbee: <code class="text-dark">Node_Desc_req</code>,
+                            <span class="text-nowrap">Spec., p.
+               <a href="http://www.zigbee.org/wp-content/uploads/2014/11/docs-05-3474-20-0csg-zigbee-specification.pdf#page=133" target="_blank">105</a></span>.
+                          </div>
+                        
+                        <code class="text-nowrap"><strong>0x0042</strong></code>
+                      </p>
+
+                      
+                        <p class="small">
+                          <strong>Response:</strong>
+                          
+                            <a href="#Responses-Status">Status</a>,
+                          
+                            <a href="#Responses-Node_Descriptor_response">Node Descriptor response</a>
+                          
+                        </p>
+
+                        
+                          <p class="small">The Node_Desc_req command is generated from a local device wishing to inquire as to the node descriptor of a remote device. This command shall be unicast either to the remote device itself or to an alternative device that contains the discovery information of the remote device. The local device shall generate the
+</p>
+                        
+                      
+                    </td>
+
+                    <td>
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Address</code></div>
+                          <div class="col-4"><code>uint16_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                    </td>
+                  </tr>
+                
+                  <tr>
+                    <td>
+                      <a name="Basic-Node_Descriptor_request"></a>
+                      <h5 class="text-nowrap">Node Descriptor request</h5>
+                      <p class="texxt-nowrap">
+                        
+                          <div class="small">
+                            Zigbee: <code class="text-dark">Simple_Desc_req</code>,
+                            <span class="text-nowrap">Spec., p.
+               <a href="http://www.zigbee.org/wp-content/uploads/2014/11/docs-05-3474-20-0csg-zigbee-specification.pdf#page=133" target="_blank">105</a></span>.
+                          </div>
+                        
+                        <code class="text-nowrap"><strong>0x0043</strong></code>
+                      </p>
+
+                      
+                        <p class="small">
+                          <strong>Response:</strong>
+                          
+                            <a href="#Responses-Status">Status</a>,
+                          
+                            <a href="#Responses-Simple_Descriptor_response">Simple Descriptor response</a>
+                          
+                        </p>
+
+                        
+                          <p class="small">The Simple_Desc_req command is generated from a local device wishing to inquire as to the simple descriptor of a remote device on a specified endpoint. This command shall be unicast either to the remote device itself or to an alternative device that contains the discovery information of the remote device. The local device shall generate the Simple_Desc_req command using.
+</p>
+                        
+                      
+                    </td>
+
+                    <td>
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Address</code></div>
+                          <div class="col-4"><code>uint16_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">endpoint</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                    </td>
+                  </tr>
+                
+              </tbody>
+            
+            <thead>
+                <tr class="bg-dark text-light">
+                  <th colspan="5">
+                    <a name="Responses"></a>
+                    <h3 id="Responses">Responses</h3>
+                  </th>
+                </tr>
+                <tr class="text-light bg-primary">
+                  <th style="width: 350px">Request</th>
+                  
+                    <th colspan="2">Parameters</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>
+                      <a name="Responses-Status"></a>
+                      <h5 class="text-nowrap">Status</h5>
+                      <p class="texxt-nowrap">
+                        
+                        <code class="text-nowrap"><strong>0x8000</strong></code>
+                      </p>
+
+                      
+                    </td>
+
+                    <td>
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Status</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                          <div class="row mt-1">
+                            <div class="col ml-4">
+                              <strong>Enumerations</strong>
+                            </div>
+                          </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>0</code>
+                              </div>
+                              <div class="col-8 small">Success</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>1</code>
+                              </div>
+                              <div class="col-8 small">Incorrect parameters</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>2</code>
+                              </div>
+                              <div class="col-8 small">Unhandled command</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>3</code>
+                              </div>
+                              <div class="col-8 small">Command failed</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>4</code>
+                              </div>
+                              <div class="col-8 small">Busy (node is carying out lenghty operation)</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>5</code>
+                              </div>
+                              <div class="col-8 small">Stack already starteed (no new configuration accepted)</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>127 - 244</code>
+                              </div>
+                              <div class="col-8 small">Zigbee error</div>
+                            </div>
+                          
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Sequence number</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Packet type</code></div>
+                          <div class="col-4"><code>uint16_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Additional info</code></div>
+                          <div class="col-4"><code>string</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                    </td>
+                  </tr>
+                
+                  <tr>
+                    <td>
+                      <a name="Responses-Node_Descriptor_response"></a>
+                      <h5 class="text-nowrap">Node Descriptor response</h5>
+                      <p class="texxt-nowrap">
+                        
+                          <div class="small">
+                            Zigbee: <code class="text-dark">Node_Desc_rsp</code>,
+                            <span class="text-nowrap">Spec., p.
+               <a href="http://www.zigbee.org/wp-content/uploads/2014/11/docs-05-3474-20-0csg-zigbee-specification.pdf#page=186" target="_blank">158</a></span>.
+                          </div>
+                        
+                        <code class="text-nowrap"><strong>0x8042</strong></code>
+                      </p>
+
+                      
+                    </td>
+
+                    <td>
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Sequence number</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Status</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                          <div class="row mt-1">
+                            <div class="col ml-4">
+                              <strong>Enumerations</strong>
+                            </div>
+                          </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>0x00</code>
+                              </div>
+                              <div class="col-8 small">SUCCESS</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>0x81</code>
+                              </div>
+                              <div class="col-8 small">DEVICE_NOT_FOUND</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>0x80</code>
+                              </div>
+                              <div class="col-8 small">INV_REQUESTTYPE</div>
+                            </div>
+                          
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>0x89</code>
+                              </div>
+                              <div class="col-8 small">NO_DESCRIPTOR</div>
+                            </div>
+                          
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">NWKAddrOfInterest</code></div>
+                          <div class="col-4"><code>uint16_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Manufacturer code</code></div>
+                          <div class="col-4"><code>uint16_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Max RX size</code></div>
+                          <div class="col-4"><code>uint16_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Server mask bits</code></div>
+                          <div class="col-4"><code>uint16_t</code></div>
+                        </div>
+                        
+                        
+                          <div class="row">
+                            <div class="col ml-4">
+                              <table class="table-sm small my-3">
+  <thead>
+    <tr class="bg-primary text-light">
+      
+      <th><strong>Bit</strong></th>
+      
+      <th><strong>Flag</strong></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        
+          <td class="text-center">
+            0
+          </td>
+        
+          <td>
+            Primary trust center
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td class="text-center">
+            1
+          </td>
+        
+          <td>
+            Back up trust center
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td class="text-center">
+            2
+          </td>
+        
+          <td>
+            Primary binding cache
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td class="text-center">
+            3
+          </td>
+        
+          <td>
+            Backup binding cache
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td class="text-center">
+            4
+          </td>
+        
+          <td>
+            Primary discovery cache
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td class="text-center">
+            5
+          </td>
+        
+          <td>
+            Backup discovery cache
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td class="text-center">
+            6
+          </td>
+        
+          <td>
+            Network manager
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td class="text-center">
+            7 - 15
+          </td>
+        
+          <td>
+            Reserved
+          </td>
+        
+      </tr>
+    
+  </tbody>
+</table>
+                            </div>
+                          </div>
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Descriptor capability</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">MAC flags</code></div>
+                          <div class="col-4"><code>uint8_t</code></div>
+                        </div>
+                        
+                        
+                        
+                      
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">Bit fields</code></div>
+                          <div class="col-4"><code>uint16_t</code></div>
+                        </div>
+                        
+                          <div class="row mt-1">
+                            <div class="col ml-4">
+                              <p class="small">Reference: to <span class="text-nowrap">Spec., p.
+               <a href="http://www.zigbee.org/wp-content/uploads/2014/11/docs-05-3474-20-0csg-zigbee-specification.pdf#page=110" target="_blank">82</a></span></p>
+                            </div>
+                          </div>
+                        
+                        
+                          <div class="row">
+                            <div class="col ml-4">
+                              <table class="table-sm small my-3">
+  <thead>
+    <tr class="bg-primary text-light">
+      
+      <th><strong>Field name</strong></th>
+      
+      <th><strong>Length (bits)</strong></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        
+          <td>
+            Logical type
+          </td>
+        
+          <td class="text-center">
+            3
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td>
+            Complex descriptor available
+          </td>
+        
+          <td class="text-center">
+            1
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td>
+            User descriptor available
+          </td>
+        
+          <td class="text-center">
+            1
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td>
+            Reserved
+          </td>
+        
+          <td class="text-center">
+            3
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td>
+            APS flags
+          </td>
+        
+          <td class="text-center">
+            3
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td>
+            Frequency band
+          </td>
+        
+          <td class="text-center">
+            5
+          </td>
+        
+      </tr>
+    
+  </tbody>
+</table>
+                            </div>
+                          </div>
+                        
+                        
+                      
+                    </td>
+                  </tr>
+                
+              </tbody>
+            
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  </body>
+</html>

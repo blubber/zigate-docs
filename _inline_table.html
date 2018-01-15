@@ -1,0 +1,20 @@
+<table class="table-sm small my-3">
+  <thead>
+    <tr class="bg-primary text-light">
+      {% for c in table.columns %}
+      <th><strong>{{ c.title }}</strong></th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in table['items'] %}
+      <tr>
+        {% for c in table.columns %}
+          <td {%- if c.classNames %} class="{{ c.classNames }}"{% endif %}>
+            {{ i[c.column] }}
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

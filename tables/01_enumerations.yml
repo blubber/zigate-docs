@@ -1,0 +1,85 @@
+---
+title: Enumerations
+description: >
+    This table explains the meaning of the enumerations used in the ZDP.
+    For more information refer to {{ 214 | spec }}.
+columns:
+    - column: enum
+      title: Enumeration
+      nowrap: true
+      template: "<code>{{ enum }}</code>"
+    - column: value
+      title: Value
+      nowrap: true
+      template: "<code>{{ '0x%04x' | format(value) }}</code>"
+    - column: description
+      title: Description
+
+items:
+    - enum: SUCCESS
+      value: 0x00
+      description: The requested operation or transmission was completed successfully.
+
+    - enum: INV_REQUESTTYPE
+      value: 0x80
+      description: The supplied request type was invalid.
+
+    - enum: DEVICE_NOT_FOUND
+      value: 0x81
+      description: >
+        The requested device did not exist on a device
+        following a child descriptor request to a parent.
+
+    - enum: INVALID_EP
+      value: 0x82
+      description: The supplied endpoint was equal to 0x00 or 0xff.
+
+    - enum: NOT_ACTIVE
+      value: 0x83
+      description: The requested endpoint is not described by a simple descriptor.
+
+    - enum: NOT_SUPPORTED
+      value: 0x84
+      description: The requested optional feature is not supported on the target device.
+
+    - enum: TIMEOUT
+      value: 0x85
+      description: A timeout has occurred with the requested operation.
+
+    - enum: NO_MATCH
+      value: 0x86
+      description: >
+        The end device bind request was unsuccessful due
+        to a failure to match any suitable clusters.
+
+    - enum: NO_ENTRY
+      value: 0x88
+      description: >
+        The unbind request was unsuccessful due to the coordinator or
+        source device not having an entry in its binding table to unbind.
+
+    - enum: NO_DESCRIPTOR
+      value: 0x89
+      description: A child descriptor was not available following a discovery request to a parent.
+
+    - enum: INSUFFICIENT_SPACE
+      value: 0x8a
+      description: The device does not have storage space to support the requested operation.
+
+    - enum: NOT_PERMITTED
+      value: 0x8b
+      description: The device is not in the proper state to support the requested operation.
+
+    - enum: TABLE_FULL
+      value: 0x8e
+      description: The device does not have table space to support the operation.
+
+    - enum: NOT_AUTHORIZED
+      value: 0x8d
+      description: >
+        The permissions configuration table on the target indicates that
+        the request is not authorized from this device.
+
+    - enum: DEVICE_BINDING_TABLE_FULL
+      value: 0x8e
+      description: The device does not have binding table space to support the operation.

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <div class="sticky-top" id="nav" style="height: calc(100vh - 3rem); overflow-y: auto">
+          <h5 style="height: 2rem;" clas="mb-0">Contents</h5>
+          <nav class="nav navbar-light navbar-light bg-light">
+            <nav class="nav flex-column">
+              <a href="#tables" class="nav-link">Tables</a>
+              <nav class="nav flex-column">
+                {% for t in tables %}
+                  <a href="#tables-{{ t.title | href }}" class="ml-4 nav-link">{{ t.title }}</a>
+                {% endfor %}
+
+              {% for category, items in categories %}
+                <a href="#{{ category | href }}" class="nav-link">{{ category }}<a/>
+                <nav class="nav flex-column">
+                  {% for item in items %}
+                    <a
+                        class="nav-link ml-4"
+                        href="#{{ category | href }}-{{ item['name'] | href }}"
+                      >{{ item['name'] }}</a>
+                  {% endfor %}
+                </nav>
+              {% endfor %}
+            </nav>
+          </nav>
+        </div>
+      </div>
+      <div class="col-9">
+        <div>
+          <a name="tables"></a>
+          <h2 id="tables">Tables</h2>
+
+          {% for t in tables %}
+            <a name="tables-{{ t.title | href }}"></a>
+            <h3 id="tables-{{ t.title | href }}">{{ t.title }}</h3>
+            {% if t.description %}
+              <p>{{ t.description }}</p>
+            {% endif %}
+            {% with table=t %}{% include "_table.html" %}{% endwith %}
+          {% endfor %}
+
+          <h2>Commands</h2>
+          <table class="table my-5">
+            {% for category, items in categories %}
+            <thead>
+                <tr class="bg-dark text-light">
+                  <th colspan="5">
+                    <a name="{{ category | href }}"></a>
+                    <h3 id="{{ category | href }}">{{ category }}</h3>
+                  </th>
+                </tr>
+                <tr class="text-light bg-primary">
+                  <th style="width: 350px">Request</th>
+                  {% if category == "Responses" %}
+                    <th colspan="2">Parameters</th>
+                  {% else %}
+                    <th>Parameters</th>
+                  {% endif %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in items %}
+                  <tr>
+                    <td>
+                      <a name="{{ category | href }}-{{ i.name | href }}"></a>
+                      <h5 class="text-nowrap">{{ i.name }}</h5>
+                      <p class="texxt-nowrap">
+                        {% if i.z_type %}
+                          <div class="small">
+                            Zigbee: <code class="text-dark">{{ i.z_type }}</code>,
+                            {{ i.z_page | spec }}.
+                          </div>
+                        {% endif %}
+                        <code class="text-nowrap"><strong>{{ '0x%04x' | format(i.type) }}</strong></code>
+                      </p>
+
+                      {% if i.responses %}
+                        <p class="small">
+                          <strong>Response:</strong>
+                          {% for r in i.responses %}
+                            <a href="#Responses-{{ r | href }}">{{ r }}</a>
+                            {%- if not loop.last %},{% endif %}
+                          {% endfor %}
+                        </p>
+
+                        {% if i.description %}
+                          <p class="small">{{ i.description }}</p>
+                        {% endif %}
+                      {% endif %}
+                    </td>
+
+                    <td>
+                      {% for p in i.parameters %}
+                        <div class="row mt-3">
+                          <div class="col-8"><code class="text-dark text-nowrap">{{ p.name }}</code></div>
+                          <div class="col-4"><code>{{ p.type }}</code></div>
+                        </div>
+                        {% if p.description %}
+                          <div class="row mt-1">
+                            <div class="col ml-4">
+                              <p class="small">{{ p.description | render(parameter=p) }}</p>
+                            </div>
+                          </div>
+                        {% endif %}
+                        {% if p.table %}
+                          <div class="row">
+                            <div class="col ml-4">
+                              {% with table=p.table %}{% include "_inline_table.html" %}{% endwith %}
+                            </div>
+                          </div>
+                        {% endif %}
+                        {% if p.enum %}
+                          <div class="row mt-1">
+                            <div class="col ml-4">
+                              <strong>Enumerations</strong>
+                            </div>
+                          </div>
+                          {% for e in p.enum %}
+                            <div class="row ml-4 my-2">
+                              <div class="col-4 text-right small text-nowrap">
+                                <code>{{ e.value }}</code>
+                              </div>
+                              <div class="col-8 small">{{ e.name }}</div>
+                            </div>
+                          {% endfor %}
+                        {% endif %}
+                      {% endfor %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  </body>
+</html>
+

@@ -1,0 +1,32 @@
+---
+category: Basic
+type: 0x41
+z_type: IEEE_addr_req
+z_page: 103
+name: IEEE Address Request
+description: >
+    The IEEE_addr_req is generated from a Local Device wishing to inquire
+    as to the 64-bit IEEE address of the Remote Device based on their
+    known 16-bit address. The destination addressing on this command shall
+    be unicast.
+
+responses:
+    - Status
+    - IEEE Address Response
+
+parameters:
+    - type: uint16_t
+      name: Short address
+
+    - type: uint8_t
+      name: Request type
+      enum:
+        - name: Single device response
+          value: 0
+
+        - name: Extended response
+          value: 1
+
+    - type: uint8_t
+      name: Start index
+

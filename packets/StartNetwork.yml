@@ -1,0 +1,8 @@
+---
+category: Basic
+type: 0x24
+name: Start Network
+responses:
+    - Status
+    - Network Joined
+
